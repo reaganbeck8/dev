@@ -1,0 +1,29 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Medical Rekordz CMS — Super Admin Panel
+   Loaded AFTER admin.css — overrides accent + adds sa-* aliases
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+    --accent: #8b5cf6;
+    --accent-hover: #7c3aed;
+    --info: #8b5cf6;
+}
+
+/* SA layout aliases — mirror admin-* structure */
+body.sa-body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.sa-wrapper { display: flex; min-height: 100vh; }
+.sa-main { flex: 1; display: flex; flex-direction: column; }
+.sa-content { padding: 24px; flex: 1; }
+.sa-sidebar { width: 220px; background: var(--bg-sidebar); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+
+.sidebar-brand a::after {
+    content: ' SA';
+    font-size: .65em;
+    color: var(--accent);
+    vertical-align: super;
+}
+
+@media (max-width: 768px) {
+    .sa-sidebar { display: none; }
+    .sa-content { padding: 16px; }
+}
